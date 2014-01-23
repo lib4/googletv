@@ -11,6 +11,7 @@ public final class R {
     public static final class anim {
         public static final int left_hide=0x7f040000;
         public static final int right_left=0x7f040001;
+        public static final int scale_alpha=0x7f040002;
     }
     public static final class attr {
     }
@@ -27,36 +28,53 @@ public final class R {
     public static final class drawable {
         public static final int back=0x7f020000;
         public static final int bg=0x7f020001;
-        public static final int fifth=0x7f020002;
-        public static final int first=0x7f020003;
-        public static final int fourth=0x7f020004;
-        public static final int games_button=0x7f020005;
-        public static final int help=0x7f020006;
-        public static final int home=0x7f020007;
-        public static final int hotel_info_button=0x7f020008;
-        public static final int htl_city_info=0x7f020009;
-        public static final int htlogo=0x7f02000a;
-        public static final int ic_launcher=0x7f02000b;
-        public static final int internet_apps_button=0x7f02000c;
-        public static final int news_sports_button=0x7f02000d;
-        public static final int orange_strip=0x7f02000e;
-        public static final int second=0x7f02000f;
-        public static final int sixth=0x7f020010;
-        public static final int third=0x7f020011;
-        public static final int time=0x7f020012;
-        public static final int tv_radio_button=0x7f020013;
-        public static final int weather=0x7f020014;
+        public static final int button_16=0x7f020002;
+        public static final int fifth=0x7f020003;
+        public static final int first=0x7f020004;
+        public static final int fourth=0x7f020005;
+        public static final int games_button=0x7f020006;
+        public static final int games_selection=0x7f020007;
+        public static final int games_selector=0x7f020008;
+        public static final int help=0x7f020009;
+        public static final int home=0x7f02000a;
+        public static final int hotel_info_button=0x7f02000b;
+        public static final int hotel_info_selection=0x7f02000c;
+        public static final int hotel_info_selector=0x7f02000d;
+        public static final int htl_city_info=0x7f02000e;
+        public static final int htl_city_info_selection=0x7f02000f;
+        public static final int htl_city_info_selector=0x7f020010;
+        public static final int htlogo=0x7f020011;
+        public static final int ic_launcher=0x7f020012;
+        public static final int internet_apps_button=0x7f020013;
+        public static final int internet_apps_selection=0x7f020014;
+        public static final int internet_apps_selector=0x7f020015;
+        public static final int news_sports_button=0x7f020016;
+        public static final int news_sports_selection=0x7f020017;
+        public static final int news_sports_selector=0x7f020018;
+        public static final int orange_strip=0x7f020019;
+        public static final int second=0x7f02001a;
+        public static final int sixth=0x7f02001b;
+        public static final int third=0x7f02001c;
+        public static final int time=0x7f02001d;
+        public static final int tv_radio_button=0x7f02001e;
+        public static final int tv_radio_selector=0x7f02001f;
+        public static final int tv_radtion_selection=0x7f020020;
+        public static final int weather=0x7f020021;
     }
     public static final class id {
-        public static final int action_settings=0x7f090004;
+        public static final int HomeFragment=0x7f090002;
+        public static final int action_settings=0x7f090007;
+        public static final int app_holder=0x7f090006;
         public static final int header_bar=0x7f090001;
+        public static final int htl_city_info=0x7f090003;
         public static final int parentholder=0x7f090000;
-        public static final int time_image_view=0x7f090002;
-        public static final int weather_image_view=0x7f090003;
+        public static final int time_image_view=0x7f090004;
+        public static final int weather_image_view=0x7f090005;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int app_frame=0x7f030001;
+        public static final int home_fragment=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f080000;

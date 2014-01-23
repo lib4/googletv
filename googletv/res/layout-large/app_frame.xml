@@ -11,7 +11,7 @@
         android:id="@+id/header_bar"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="1.5"
         android:orientation="horizontal"
         android:weightSum="1.0" >
 
@@ -45,77 +45,36 @@
             android:src="@drawable/home" />
     </LinearLayout>
 
-
-
+    <LinearLayout   android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".2"
+        android:background="#E68A00">
+        
+    </LinearLayout>
     <!-- HEADER CLOSE -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6"
+        android:layout_weight="5.8"
         android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:weightSum="1.0" >
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".2"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:weightSum="1.0" >
-
-            <ImageView
-                android:id="@+id/time_image_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:src="@drawable/time" />
-
-            <ImageView
-                android:id="@+id/weather_image_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:src="@drawable/weather" />
-        </LinearLayout>
-
-        <com.lib4.googletv.ImageHolderView
-            xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/parentholder"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".6" >
-        </com.lib4.googletv.ImageHolderView>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".2"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:weightSum="1.0" >
-
-            <ImageView
-                android:id="@+id/time_image_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:src="@drawable/htlogo" />
-
-            <ImageView
-                android:id="@+id/weather_image_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".5"
-                android:src="@drawable/help" />
-        </LinearLayout>
+		<fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.lib4.googletv.fragments.HomeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       />
+  
     </LinearLayout>
     <!-- SLIDING IMAGE CLOSE -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="2.5"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:weightSum="1.0" >
@@ -132,19 +91,27 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
-                android:src="@drawable/htl_city_info" />
+                android:focusable="true"
+                android:clickable="true"
+                android:scaleType="fitCenter"
+                android:id="@+id/htl_city_info"
+                android:src="@drawable/htl_city_info_selector" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
-                android:src="@drawable/internet_apps_button" />
+                  android:focusable="true"
+                   android:clickable="true"
+                android:src="@drawable/internet_apps_selector" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
-                android:src="@drawable/tv_radio_button" />
+                android:focusable="true"
+                 android:clickable="true"
+                android:src="@drawable/tv_radio_selector" />
         </LinearLayout>
 
         <LinearLayout
@@ -159,19 +126,25 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
-                android:src="@drawable/news_sports_button" />
+                  android:focusable="true"
+                   android:clickable="true"
+                android:src="@drawable/news_sports_selector" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
-                android:src="@drawable/games_button" />
+                 android:clickable="true"
+                 android:focusable="true"
+                 android:src="@drawable/games_selector" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
-                android:src="@drawable/hotel_info_button" />
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/hotel_info_selector" />
         </LinearLayout>
     </LinearLayout>
 
