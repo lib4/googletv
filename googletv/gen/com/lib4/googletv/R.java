@@ -30,35 +30,29 @@ public final class R {
         public static final int fifth=0x7f020002;
         public static final int first=0x7f020003;
         public static final int fourth=0x7f020004;
-        public static final int help=0x7f020005;
-        public static final int home=0x7f020006;
-        public static final int htlogo=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int orange_strip=0x7f020009;
-        public static final int second=0x7f02000a;
-        public static final int sixth=0x7f02000b;
-        public static final int third=0x7f02000c;
-        public static final int time=0x7f02000d;
-        public static final int weather=0x7f02000e;
+        public static final int games_button=0x7f020005;
+        public static final int help=0x7f020006;
+        public static final int home=0x7f020007;
+        public static final int hotel_info_button=0x7f020008;
+        public static final int htl_city_info=0x7f020009;
+        public static final int htlogo=0x7f02000a;
+        public static final int ic_launcher=0x7f02000b;
+        public static final int internet_apps_button=0x7f02000c;
+        public static final int news_sports_button=0x7f02000d;
+        public static final int orange_strip=0x7f02000e;
+        public static final int second=0x7f02000f;
+        public static final int sixth=0x7f020010;
+        public static final int third=0x7f020011;
+        public static final int time=0x7f020012;
+        public static final int tv_radio_button=0x7f020013;
+        public static final int weather=0x7f020014;
     }
     public static final class id {
-        public static final int action_settings=0x7f090010;
-        public static final int bottomPanel=0x7f090009;
-        public static final int games_btn=0x7f09000e;
-        public static final int header=0x7f090001;
-        public static final int help_btn=0x7f090008;
-        public static final int home_btn=0x7f090002;
-        public static final int hotelcityinfo_btn=0x7f09000a;
-        public static final int hotelinfo_btn=0x7f09000f;
-        public static final int hotellogo_btn=0x7f090007;
-        public static final int internetapps_btn=0x7f09000b;
-        public static final int middle_panel=0x7f090004;
-        public static final int newssports_btn=0x7f09000d;
+        public static final int action_settings=0x7f090004;
+        public static final int header_bar=0x7f090001;
         public static final int parentholder=0x7f090000;
-        public static final int time_btn=0x7f090005;
-        public static final int title_txt=0x7f090003;
-        public static final int tvonlineradio_btn=0x7f09000c;
-        public static final int weather_btn=0x7f090006;
+        public static final int time_image_view=0x7f090002;
+        public static final int weather_image_view=0x7f090003;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -94,5 +88,6 @@ public final class R {
          */
         public static final int AppTheme=0x7f070001;
         public static final int button=0x7f070002;
+        public static final int imagestyle=0x7f070003;
     }
 }

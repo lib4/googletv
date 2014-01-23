@@ -17,12 +17,17 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
-      <style name="button" parent="@android:style/Widget.Button">
+    <style name="button" parent="@android:style/Widget.Button">
         <item name="android:layout_width">150dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">#A09B90</item>
-  
         <item name="android:typeface">normal</item>
-        <item name="android:textStyle">bold</item>      
+        <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="imagestyle" parent="@android:style/Widget.ImageButton">
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_height">100dp</item>
+    </style>
+
 </resources>
