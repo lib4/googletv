@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+  
+    android:background="@color/pane_background_color"
+    android:gravity="center" >
+    <RelativeLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/appicon"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_launcher"
+        />
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appname"
+        android:gravity="center"
+        android:layout_below="@id/appicon"
+        android:text="AppName"
+      
+        />
+    
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tickmark"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/appicon"
+        android:src="@drawable/ic_tick_mark"
+        />
+    </RelativeLayout>
+
+</LinearLayout>

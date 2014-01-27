@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    android:gravity="center"
     android:orientation="vertical"
     android:weightSum="10" >
 
@@ -32,48 +31,36 @@
             android:textSize="50sp" />
 
         <ImageView
+            android:id="@+id/settings"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_gravity="right"
             android:layout_weight=".15"
-            android:id="@+id/settings"
             android:clickable="true"
             android:focusable="true"
-            android:layout_gravity="right"
             android:src="@drawable/back" />
-
-  
     </LinearLayout>
 
-    <LinearLayout   android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight=".2"
-        android:background="#E68A00">
-        
+        android:background="#E68A00" >
     </LinearLayout>
-    <!-- HEADER CLOSE -->
+
+    <LinearLayout
+        android:id="@+id/apps_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6.5"
+        android:background="@color/white_tile_background_color"
+        android:orientation="horizontal">
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6.8"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:weightSum="1.0" >
-		<fragment
-        android:id="@+id/HomeFragment"
-        android:name="com.lib4.googletv.fragments.HomeFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-       />
-  
-    </LinearLayout>
-    <!-- SLIDING IMAGE CLOSE -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2.0"
+        android:layout_weight="2.5"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:weightSum="1.0" >
@@ -87,29 +74,31 @@
             android:weightSum="1.0" >
 
             <ImageView
+                android:id="@+id/htl_city_info"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
-                android:focusable="true"
                 android:clickable="true"
+                android:focusable="true"
                 android:scaleType="fitCenter"
-                android:id="@+id/htl_city_info"
                 android:src="@drawable/htl_city_info_selector" />
 
             <ImageView
+                android:id="@+id/internet_apps"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
-                  android:focusable="true"
-                   android:clickable="true"
+                android:clickable="true"
+                android:focusable="true"
                 android:src="@drawable/internet_apps_selector" />
 
             <ImageView
+                android:id="@+id/tv_radio"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
+                android:clickable="true"
                 android:focusable="true"
-                 android:clickable="true"
                 android:src="@drawable/tv_radio_selector" />
         </LinearLayout>
 
@@ -122,22 +111,25 @@
             android:weightSum="1.0" >
 
             <ImageView
+                android:id="@+id/news_sports"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
-                  android:focusable="true"
-                   android:clickable="true"
+                android:clickable="true"
+                android:focusable="true"
                 android:src="@drawable/news_sports_selector" />
 
             <ImageView
+                android:id="@+id/games"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
-                 android:clickable="true"
-                 android:focusable="true"
-                 android:src="@drawable/games_selector" />
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/games_selector" />
 
             <ImageView
+                android:id="@+id/hotel_info"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
