@@ -19,6 +19,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="left"
             android:layout_weight=".15"
+                android:id="@+id/home"
             android:src="@drawable/home" />
 
         <TextView
@@ -34,10 +35,11 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".15"
-            android:id="@+id/settings"
+            android:id="@+id/back"
             android:clickable="true"
             android:focusable="true"
             android:layout_gravity="right"
+           
             android:src="@drawable/back" />
 
   

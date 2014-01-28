@@ -16,10 +16,12 @@
         android:weightSum="1.0" >
 
         <ImageView
+            android:id="@+id/home"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="left"
             android:layout_weight=".15"
+            android:visibility="invisible"
             android:src="@drawable/home" />
 
         <TextView
@@ -39,7 +41,7 @@
             android:clickable="true"
             android:focusable="true"
             android:layout_gravity="right"
-            android:src="@drawable/back" />
+            android:src="@drawable/settings" />
 
   
     </LinearLayout>
@@ -97,14 +99,16 @@
                 android:src="@drawable/htl_city_info_selector" />
 
             <ImageView
+                   android:id="@+id/internet_apps"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
-                  android:focusable="true"
-                   android:clickable="true"
+                android:focusable="true"
+                android:clickable="true"
                 android:src="@drawable/internet_apps_selector" />
 
             <ImageView
+                    android:id="@+id/tv_radio"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight=".33"
@@ -127,6 +131,7 @@
                 android:layout_weight=".33"
                   android:focusable="true"
                    android:clickable="true"
+                      android:id="@+id/news_sports"
                 android:src="@drawable/news_sports_selector" />
 
             <ImageView
@@ -135,6 +140,7 @@
                 android:layout_weight=".33"
                  android:clickable="true"
                  android:focusable="true"
+                    android:id="@+id/games"
                  android:src="@drawable/games_selector" />
 
             <ImageView
@@ -143,6 +149,7 @@
                 android:layout_weight=".33"
                 android:clickable="true"
                 android:focusable="true"
+                 android:id="@+id/hotel_info"
                 android:src="@drawable/hotel_info_selector" />
         </LinearLayout>
     </LinearLayout>

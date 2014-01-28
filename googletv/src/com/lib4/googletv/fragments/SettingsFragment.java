@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -23,9 +24,10 @@ public class SettingsFragment extends BaseFragment {
 
 	LinearLayout mSettingsLayout,mAppsLinearLayout;
 	ImageView htl_city_info, internet_apps, tv_radio, news_sports, games,
-			hotel_info;
+			hotel_info,home,back;
 	ArrayList<AppInfo> mApps ;
 	PinterestUI mPinterestUI;
+	int CATEGORY	=	1;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,9 +48,52 @@ public class SettingsFragment extends BaseFragment {
 		games = (ImageView) mSettingsLayout.findViewById(R.id.games);
 		hotel_info = (ImageView) mSettingsLayout.findViewById(R.id.hotel_info);
 		mAppsLinearLayout	=	(LinearLayout) mSettingsLayout.findViewById(R.id.apps_layout);
+		
+		htl_city_info.setTag(Constants.HOTEL_CITY_INFO_FLAG);
+		internet_apps.setTag(Constants.INTERNET_APPS_FLAG);
+		tv_radio.setTag(Constants.TV_ONLINE_RADIO_FLAG);
+		news_sports.setTag(Constants.NEWS_SPORTS_FLAG);
+		games.setTag(Constants.GAMES_FLAG);
+		hotel_info.setTag(Constants.HOTEL_INFO_FLAG);
+		htl_city_info.setOnClickListener(showAppsListener);
+		internet_apps.setOnClickListener(showAppsListener);
+		tv_radio.setOnClickListener(showAppsListener);
+		news_sports.setOnClickListener(showAppsListener);
+		games.setOnClickListener(showAppsListener);
+		hotel_info.setOnClickListener(showAppsListener);
+		CATEGORY	=	1;
 		loadAllInstalledApps();
-		showApps();
+		
+		home	=	(ImageView) mSettingsLayout.findViewById(R.id.home);
+		home.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				getActivity().finish();
+				
+			}
+		});
+		
+		back	=	(ImageView) mSettingsLayout.findViewById(R.id.back);
+		back.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				getActivity().finish();
+				
+			}
+		});
 
+	}
+	
+	
+	@Override
+	public void onResume(){
+		super.onResume();
+		highLightSelected();
+		showApps(CATEGORY);
+		
+		
 	}
 	
 	private void loadAllInstalledApps(){
@@ -73,9 +118,12 @@ public class SettingsFragment extends BaseFragment {
 
 	}
 	
-	private void showApps(){
+	private void showApps(int CATEGORY){
 		
-		mPinterestUI	=	new PinterestUI(getActivity(),mApps);
+		if(mPinterestUI!=null){
+			mAppsLinearLayout.removeView(mPinterestUI);
+		}
+		mPinterestUI	=	new PinterestUI(getActivity(),mApps,2,CATEGORY);
 		mPinterestUI.createLayout();
 		//mScrollView	=	new ScrollView(mContext);
 		//mScrollView.addView(mPinterestUI);
@@ -84,16 +132,61 @@ public class SettingsFragment extends BaseFragment {
 	}
 
 	
-	private void setToPreference(String packageName){
+
+	
+	
+	private View.OnClickListener  showAppsListener	= new View.OnClickListener() {
 		
-		final SharedPreferences prefs = getActivity().getSharedPreferences(com.lib4.googletv.BaseActivity.class.getSimpleName(),
-				
-				Context.MODE_PRIVATE);
-		Set<String> set = new HashSet<String>();
-		set	=	prefs.getStringSet(Constants.HOTEL_CITY_INFO, set);
-		set.add("test");
-		//SharedPreferences.Editor editor	=	 prefs.edit().clear();
-		//editor.commit();
+		@Override
+		public void onClick(View v) {
+			
+			CATEGORY	=	(Integer) v.getTag();
+			highLightSelected();
+			showApps(CATEGORY);
+			
+		}
+	}; 
+	
+	private void highLightSelected(){
+		
+		htl_city_info.setImageResource(R.drawable.hotel_info_button);
+		internet_apps.setImageResource(R.drawable.internet_apps_button);
+		tv_radio.setImageResource(R.drawable.tv_radio_button);
+		news_sports.setImageResource(R.drawable.news_sports_button);
+		games.setImageResource(R.drawable.games_button);
+		hotel_info.setImageResource(R.drawable.hotel_info_button);
+		
+		switch(CATEGORY){
+		
+				case Constants.HOTEL_CITY_INFO_FLAG:
+					htl_city_info.setImageResource(R.drawable.htl_city_info_selection);
+					break;
+					
+				case Constants.INTERNET_APPS_FLAG:
+					internet_apps.setImageResource(R.drawable.internet_apps_selection);
+					break;
+					
+				case Constants.TV_ONLINE_RADIO_FLAG:
+					tv_radio.setImageResource(R.drawable.tv_radtion_selection);
+					break;
+					
+				case Constants.NEWS_SPORTS_FLAG:
+					news_sports.setImageResource(R.drawable.news_sports_selection);
+					break;
+					
+				case Constants.GAMES_FLAG:
+					games.setImageResource(R.drawable.games_selection);
+					break;
+					
+				case Constants.HOTEL_INFO_FLAG:
+					hotel_info.setImageResource(R.drawable.hotel_info_selection);
+					break;
+			
+			
+		
+		}
+	
+		
 	}
 
 }

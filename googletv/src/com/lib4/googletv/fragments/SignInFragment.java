@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.lib4.googletv.MainActivity;
@@ -24,6 +25,7 @@ public class SignInFragment extends BaseFragment{
 	LinearLayout mSignInLayout;
 	EditText usernameEdtTxt,passwordEdtTxt;
 	Button signInButton;
+	ImageView home,back;
 	
 	
 	@Override
@@ -55,12 +57,34 @@ public class SignInFragment extends BaseFragment{
 					// Calling the next Activity.
 					Intent intent = new Intent(getActivity(), SettingsActivity.class);
 					startActivity(intent);
+					getActivity().finish();
 						
 				}else{
 					
 					showAlertDialog(getActivity().getString(R.string.uname_not_matching));
 				}
 					
+				
+			}
+		});
+		
+		
+		home	=	(ImageView) mSignInLayout.findViewById(R.id.home);
+		home.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				getActivity().finish();
+				
+			}
+		});
+		
+		back	=	(ImageView) mSignInLayout.findViewById(R.id.back);
+		back.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				getActivity().finish();
 				
 			}
 		});

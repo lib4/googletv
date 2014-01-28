@@ -15,6 +15,7 @@
         android:weightSum="1.0" >
 
         <ImageView
+            android:id="@+id/home"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="left"
@@ -31,7 +32,7 @@
             android:textSize="50sp" />
 
         <ImageView
-            android:id="@+id/settings"
+            android:id="@+id/back"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="right"
