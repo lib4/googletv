@@ -8,6 +8,7 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.WindowManager;
@@ -84,6 +85,7 @@ public class PinterestUI extends LinearLayout {
 		for (int i = 0; i < NUM_COLUMN; i++) {
 
 			LinearLayout mLinearLayout = new LinearLayout(context);
+			mLinearLayout.setGravity(Gravity.CENTER_HORIZONTAL);//Orientation()
 			mLinearLayout.setLayoutParams(new LayoutParams(SCREEN_WIDTH
 					/ NUM_COLUMN, LayoutParams.WRAP_CONTENT));
 
