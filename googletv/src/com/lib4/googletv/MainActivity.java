@@ -1,10 +1,18 @@
 package com.lib4.googletv;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,6 +21,8 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import com.lib4.googletv.entity.AppInfo;
+import com.lib4.googletv.fragments.BaseFragment;
+import com.lib4.googletv.util.Constants;
 import com.lib4.googletv.util.PInfo;
 import com.lib4.googletv.util.PinterestUI;
 
@@ -21,12 +31,15 @@ public class MainActivity extends Activity {
 	ImageHolderView mHolderView;
 	private String TAG = MainActivity.class.getCanonicalName();
 
-	private ImageView hotelCityInfo;
+	private ImageView hotelCityInfo,internetApps,tvOnlineRadio,newsSports,games,hotelInfo,home;
 	LinearLayout mAppsLinearLayout;
 	PinterestUI mPinterestUI;
 	Context mContext;
-	ScrollView mScrollView	;
-	ArrayList<AppInfo> mApps ;
+	ScrollView mScrollView;
+	ArrayList<AppInfo> installedApps;
+	ImageView Settings;
+	int CATEGORY = 2;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,44 +49,80 @@ public class MainActivity extends Activity {
 				R.drawable.third, R.drawable.fourth, R.drawable.fifth });
 		PInfo mInfo = new PInfo(this);
 		mAppsLinearLayout = (LinearLayout) findViewById(R.id.app_holder);
-		mApps = mInfo.getInstalledAppInfo();
-		mContext	=	this;
-	
-		final int max = mApps.size();
+		installedApps = mInfo.getInstalledAppInfo();
+		mContext = this;
+
+		final int max = installedApps.size();
 		for (int i = 0; i < max; i++) {
-			AppInfo mAppInfo = mApps.get(i);
+			AppInfo mAppInfo = installedApps.get(i);
 			ImageView mImageView = new ImageView(this);
 			mImageView
 					.setLayoutParams(new android.widget.LinearLayout.LayoutParams(
 							LinearLayout.LayoutParams.WRAP_CONTENT,
 							LinearLayout.LayoutParams.WRAP_CONTENT));
 			mImageView.setBackgroundDrawable(mAppInfo.icon);
-			//mAppsLinearLayout.addView(mImageView);
+			// mAppsLinearLayout.addView(mImageView);
 
 		}
+		CATEGORY = 1;
+
+		hotelCityInfo = (ImageView) findViewById(R.id.htl_city_info);
+		internetApps	=	(ImageView) findViewById(R.id.internet_apps);
+		tvOnlineRadio = (ImageView) findViewById(R.id.tv_radio);
+		newsSports	=	(ImageView) findViewById(R.id.news_sports);
+		games = (ImageView) findViewById(R.id.games);
+		hotelInfo	=	(ImageView) findViewById(R.id.hotel_info);
+		hotelCityInfo.setTag(Constants.HOTEL_CITY_INFO_FLAG);
+		internetApps.setTag(Constants.INTERNET_APPS_FLAG);
+		tvOnlineRadio.setTag(Constants.TV_ONLINE_RADIO_FLAG);
+		newsSports.setTag(Constants.NEWS_SPORTS_FLAG);
+		games.setTag(Constants.GAMES_FLAG);
+		hotelInfo.setTag(Constants.HOTEL_INFO_FLAG);
+
+	
+		
+		
+		hotelCityInfo.setOnClickListener(showAppsListener);
+		internetApps.setOnClickListener(showAppsListener);
+		tvOnlineRadio.setOnClickListener(showAppsListener);
+		newsSports.setOnClickListener(showAppsListener);
+		games.setOnClickListener(showAppsListener);
+		hotelInfo.setOnClickListener(showAppsListener);
+		
+		
+
+		Settings = (ImageView) findViewById(R.id.settings);
+		Settings.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+				// Calling the next Activity.
+				Intent intent = new Intent(MainActivity.this,
+						SignInActivity.class);
+				startActivity(intent);
+			}
+		});
 
 		
-		hotelCityInfo	=	(ImageView) findViewById(R.id.htl_city_info);
-		hotelCityInfo.setOnClickListener(new OnClickListener() {
+		
+		home	=	(ImageView) findViewById(R.id.home);
+		home.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				
-				mPinterestUI	=	new PinterestUI(mContext,mApps);
-				mPinterestUI.createLayout();
-				mScrollView	=	new ScrollView(mContext);
-				mScrollView.addView(mPinterestUI);
-				mAppsLinearLayout.addView(mScrollView);
-				mAppsLinearLayout.setVisibility(View.VISIBLE);
-				
+				finish();
 				
 			}
 		});
 		
-		
-		
-		
-		
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		populateScreen();
+
 	}
 
 	@Override
@@ -81,6 +130,160 @@ public class MainActivity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
+	}
+
+	private void populateScreen() {
+
+		Log.e("CATEGORY "," "+CATEGORY);
+		
+		
+		highLightSelected();
+		
+		switch (CATEGORY) {
+
+		case Constants.HOTEL_CITY_INFO_FLAG:
+			
+			showApps(Constants.HOTEL_CITY_INFO_FLAG);
+		
+			
+			break;
+		case Constants.INTERNET_APPS_FLAG:
+			showApps(Constants.INTERNET_APPS_FLAG);
+		
+			
+			break;
+		case Constants.TV_ONLINE_RADIO_FLAG:
+
+		
+			showApps(Constants.TV_ONLINE_RADIO_FLAG);
+			
+			break;
+			
+		case Constants.NEWS_SPORTS_FLAG:
+
+			
+			showApps(Constants.NEWS_SPORTS_FLAG);
+			break;
+		case Constants.GAMES_FLAG:
+
+			showApps(Constants.GAMES_FLAG);
+			break;
+		case Constants.HOTEL_INFO_FLAG:
+
+			
+			showApps(Constants.HOTEL_INFO_FLAG);
+			break;
+		}
+
+		
+
+	}
+
+	private void showApps(int CATEGORY) {
+
+		
+		if(mPinterestUI!=null){
+			mAppsLinearLayout.removeView(mPinterestUI);
+		}
+		mPinterestUI = new PinterestUI(mContext,
+				getAppsForThisCategory(Constants.CATEGORY_MAP.get(CATEGORY)), 1,
+				CATEGORY);
+		mPinterestUI.createLayout();
+		mAppsLinearLayout.addView(mPinterestUI);
+		mAppsLinearLayout.setVisibility(View.VISIBLE);
+
+	}
+
+	private ArrayList<AppInfo> getAppsForThisCategory(String Key) {
+
+		
+		Log.e("KEY "," "+Key);
+		final SharedPreferences prefs = getSharedPreferences(
+				Key,
+
+				Context.MODE_PRIVATE);
+		Set<String> set = new HashSet<String>();
+		Set<String> stored = prefs.getStringSet(Key, set);
+		Iterator mIterator = stored.iterator();
+		while (mIterator.hasNext()) {
+
+			String str = (String) mIterator.next();
+
+			Log.e("STR ", "" + str);
+
+		}
+
+		ArrayList<AppInfo> cateogryApps = new ArrayList<AppInfo>();
+		final int max = installedApps.size();
+		for (int i = 0; i < max; i++) {
+			AppInfo mAppInfo = installedApps.get(i);
+			if (stored.contains(mAppInfo.appname)) {
+				cateogryApps.add(mAppInfo);
+				Log.e("FOUND  ", "" + mAppInfo.appname);
+			} else {
+				Log.e("mAppInfo ", "" + mAppInfo.appname);
+			}
+
+		}
+
+		return cateogryApps;
+
+	}
+	
+	
+	
+	private View.OnClickListener  showAppsListener	= new View.OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			//v.requestFocus();
+			//v.setPressed(true);
+			CATEGORY	=	(Integer) v.getTag();
+			populateScreen();
+			
+		}
+	}; 
+	
+	private void highLightSelected(){
+		
+		hotelCityInfo.setImageResource(R.drawable.hotel_info_button);
+		internetApps.setImageResource(R.drawable.internet_apps_button);
+		tvOnlineRadio.setImageResource(R.drawable.tv_radio_button);
+		newsSports.setImageResource(R.drawable.news_sports_button);
+		games.setImageResource(R.drawable.games_button);
+		hotelInfo.setImageResource(R.drawable.hotel_info_button);
+		
+		switch(CATEGORY){
+		
+				case Constants.HOTEL_CITY_INFO_FLAG:
+					hotelCityInfo.setImageResource(R.drawable.htl_city_info_selection);
+					break;
+					
+				case Constants.INTERNET_APPS_FLAG:
+					internetApps.setImageResource(R.drawable.internet_apps_selection);
+					break;
+					
+				case Constants.TV_ONLINE_RADIO_FLAG:
+					tvOnlineRadio.setImageResource(R.drawable.tv_radtion_selection);
+					break;
+					
+				case Constants.NEWS_SPORTS_FLAG:
+					newsSports.setImageResource(R.drawable.news_sports_selection);
+					break;
+					
+				case Constants.GAMES_FLAG:
+					games.setImageResource(R.drawable.games_selection);
+					break;
+					
+				case Constants.HOTEL_INFO_FLAG:
+					hotelInfo.setImageResource(R.drawable.hotel_info_selection);
+					break;
+			
+			
+		
+		}
+	
+		
 	}
 
 }
