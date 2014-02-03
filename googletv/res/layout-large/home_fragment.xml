@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/white_tile_background_color"
     android:orientation="vertical"
     android:weightSum="1.0" >
 
@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
       
-        android:layout_weight=".7"
+        android:layout_weight="1.0"
         android:orientation="horizontal"
         android:weightSum="1.0" >
 
@@ -18,7 +18,8 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".2"
-             android:layout_margin="1dp"
+             android:layout_margin="3dp"
+             android:padding="3dp"
             
             android:gravity="center_horizontal"
             android:orientation="vertical"
@@ -51,9 +52,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".2"
-             android:layout_margin="1dp"
+            android:layout_margin="3dp"
             android:gravity="center_horizontal"
             android:orientation="vertical"
+            
             android:weightSum="1.0" >
 
             <ImageView
@@ -74,7 +76,7 @@
 
     <LinearLayout
         android:id="@+id/app_holder"
-
+		android:visibility="gone"
         android:padding="1dp"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -82,7 +84,7 @@
         android:orientation="horizontal"
         android:layout_gravity="right"
         android:gravity="right"
-        android:visibility="visible"
+       
 
         android:weightSum="1.0" >
     </LinearLayout>

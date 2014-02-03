@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_tile_background_color"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:weightSum="10" >
+
+    <LinearLayout
+        android:id="@+id/header_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"
+        android:orientation="horizontal"
+        android:weightSum="1.0" >
+
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_weight=".15"
+            android:src="@drawable/home"
+            android:visibility="invisible" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight=".7"
+            android:gravity="center"
+            android:text="Hotel/City Info"
+            android:textColor="@color/welcome_message_color"
+            android:textSize="42sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".2"
+        android:background="#E68A00" >
+    </LinearLayout>
+
+    <ImageView 
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+              android:layout_weight="3.8"
+              android:background="@drawable/barcelona"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5.0" >
+
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="5dp"
+            android:text="@string/compnay_info"
+            android:textColor="@color/text_color"
+            android:textSize="20sp" />
+    </ScrollView>
+
+</LinearLayout>

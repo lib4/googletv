@@ -35,7 +35,7 @@ import com.lib4.googletv.R;
 import com.lib4.googletv.entity.AppInfo;
 
 public class PinterestUI extends LinearLayout {
-	private int NUM_COLUMN = 10;
+	private int NUM_COLUMN = 5;
 	Context context;
 	int SCREEN_WIDTH = 0;
 	int SCREEN_HEIGHT = 0;
@@ -84,21 +84,24 @@ public class PinterestUI extends LinearLayout {
 		System.out.println("IM HERE>>>>>>>>>>>" + SCREEN_WIDTH);
 		
 		if(mApps.size()==0){
-			
-			LinearLayout mLinearLayout = new LinearLayout(context);
-			mLinearLayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT
-					, LayoutParams.WRAP_CONTENT));
-			
-			TextView mTextView	=	new TextView(context);
-			mTextView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT
-					, LayoutParams.WRAP_CONTENT));
-			
-			mTextView.setTextSize(25);
-			mTextView.setText("No apps found for this category.");
-			mLinearLayout.addView(mTextView);
-			setGravity(Gravity.LEFT);
-			
-			addView(mLinearLayout);
+//			
+//			LinearLayout mLinearLayout = new LinearLayout(context);
+//			mLinearLayout.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT
+//					, LayoutParams.WRAP_CONTENT));
+//			
+//			TextView mTextView	=	new TextView(context);
+//			mTextView.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT
+//					, LayoutParams.WRAP_CONTENT));
+//			
+//			mTextView.setTextSize(25);
+//			mTextView.setText("No apps found for this category.");
+//			mLinearLayout.addView(mTextView);
+//			//setGravity(Gravity.LEFT);
+//			//mLinearLayout.setGravity(Gravity.LEFT);
+//			mLinearLayout.setBackgroundColor(Color.BLACK);
+//			addView(mLinearLayout);
+//			setBackgroundColor(Color.CYAN);
+//			setLeft(0);
 			return;
 			
 		}

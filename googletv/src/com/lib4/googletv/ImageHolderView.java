@@ -123,6 +123,7 @@ public class ImageHolderView extends FrameLayout {
 	private void switchImages() {
 
 		count++;
+		try{
 		if (count % 2 != 0) {
 			imageView1.startAnimation(animationSlideOutLeft);
 			imageView2.setImageResource(imageIds[getNextIndex()]);
@@ -131,6 +132,9 @@ public class ImageHolderView extends FrameLayout {
 			imageView1.setImageResource(imageIds[getNextIndex()]);
 			imageView1.startAnimation(animationSlideInLeft);
 			imageView2.startAnimation(animationSlideOutLeft);
+		}
+		}catch(OutOfMemoryError e){
+			e.printStackTrace();
 		}
 
 	}

@@ -31,7 +31,8 @@ public class MainActivity extends Activity {
 	ImageHolderView mHolderView;
 	private String TAG = MainActivity.class.getCanonicalName();
 
-	private ImageView hotelCityInfo,internetApps,tvOnlineRadio,newsSports,games,hotelInfo,home;
+	private ImageView hotelCityInfo, internetApps, tvOnlineRadio, newsSports,
+			games, hotelInfo, home;
 	LinearLayout mAppsLinearLayout;
 	PinterestUI mPinterestUI;
 	Context mContext;
@@ -45,13 +46,16 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.app_frame);
 		mHolderView = (ImageHolderView) findViewById(R.id.parentholder);
-		mHolderView.setImages(new int[] { R.drawable.first, R.drawable.second,
-				R.drawable.third, R.drawable.fourth, R.drawable.fifth });
-		PInfo mInfo = new PInfo(this);
+		mHolderView.setImages(new int[] { R.drawable.hotel_images_00,
+				R.drawable.hotel_images_01, R.drawable.hotel_images_02,
+				R.drawable.hotel_images_03, R.drawable.hotel_images_04,
+				R.drawable.hotel_images_05, R.drawable.hotel_images_06,
+				R.drawable.hotel_images_07, R.drawable.hotel_images_08 });
+		//PInfo mInfo = new PInfo(this);
 		mAppsLinearLayout = (LinearLayout) findViewById(R.id.app_holder);
-		installedApps = mInfo.getInstalledAppInfo();
+		//installedApps = mInfo.getInstalledAppInfo();
 		mContext = this;
-
+		/*
 		final int max = installedApps.size();
 		for (int i = 0; i < max; i++) {
 			AppInfo mAppInfo = installedApps.get(i);
@@ -64,14 +68,15 @@ public class MainActivity extends Activity {
 			// mAppsLinearLayout.addView(mImageView);
 
 		}
+		*/
 		CATEGORY = 1;
 
 		hotelCityInfo = (ImageView) findViewById(R.id.htl_city_info);
-		internetApps	=	(ImageView) findViewById(R.id.internet_apps);
+		internetApps = (ImageView) findViewById(R.id.internet_apps);
 		tvOnlineRadio = (ImageView) findViewById(R.id.tv_radio);
-		newsSports	=	(ImageView) findViewById(R.id.news_sports);
+		newsSports = (ImageView) findViewById(R.id.news_sports);
 		games = (ImageView) findViewById(R.id.games);
-		hotelInfo	=	(ImageView) findViewById(R.id.hotel_info);
+		hotelInfo = (ImageView) findViewById(R.id.hotel_info);
 		hotelCityInfo.setTag(Constants.HOTEL_CITY_INFO_FLAG);
 		internetApps.setTag(Constants.INTERNET_APPS_FLAG);
 		tvOnlineRadio.setTag(Constants.TV_ONLINE_RADIO_FLAG);
@@ -79,17 +84,12 @@ public class MainActivity extends Activity {
 		games.setTag(Constants.GAMES_FLAG);
 		hotelInfo.setTag(Constants.HOTEL_INFO_FLAG);
 
-	
-		
-		
 		hotelCityInfo.setOnClickListener(showAppsListener);
 		internetApps.setOnClickListener(showAppsListener);
 		tvOnlineRadio.setOnClickListener(showAppsListener);
 		newsSports.setOnClickListener(showAppsListener);
 		games.setOnClickListener(showAppsListener);
 		hotelInfo.setOnClickListener(showAppsListener);
-		
-		
 
 		Settings = (ImageView) findViewById(R.id.settings);
 		Settings.setOnClickListener(new OnClickListener() {
@@ -104,24 +104,22 @@ public class MainActivity extends Activity {
 			}
 		});
 
-		
-		
-		home	=	(ImageView) findViewById(R.id.home);
+		home = (ImageView) findViewById(R.id.home);
 		home.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				finish();
-				
+
 			}
 		});
-		
+
 	}
 
 	@Override
 	public void onResume() {
 		super.onResume();
-		populateScreen();
+		//populateScreen();
 
 	}
 
@@ -134,35 +132,32 @@ public class MainActivity extends Activity {
 
 	private void populateScreen() {
 
-		Log.e("CATEGORY "," "+CATEGORY);
-		
-		
-		highLightSelected();
-		
+		Log.e("CATEGORY ", " " + CATEGORY);
+
+		//highLightSelected();
+
 		switch (CATEGORY) {
 
 		case Constants.HOTEL_CITY_INFO_FLAG:
-			
-			showApps(Constants.HOTEL_CITY_INFO_FLAG);
-		
-			
+
+			//showApps(Constants.HOTEL_CITY_INFO_FLAG);
+			switchToActivity(HotelCityInfoActivity.class);
 			break;
 		case Constants.INTERNET_APPS_FLAG:
-			showApps(Constants.INTERNET_APPS_FLAG);
-		
-			
+			//showApps(Constants.INTERNET_APPS_FLAG);
+
+			switchToActivity(InternetAppsActivity.class);
 			break;
 		case Constants.TV_ONLINE_RADIO_FLAG:
 
-		
 			showApps(Constants.TV_ONLINE_RADIO_FLAG);
-			
+
 			break;
-			
+
 		case Constants.NEWS_SPORTS_FLAG:
 
-			
-			showApps(Constants.NEWS_SPORTS_FLAG);
+			//showApps(Constants.NEWS_SPORTS_FLAG);
+			switchToActivity(WebViewActivity.class);
 			break;
 		case Constants.GAMES_FLAG:
 
@@ -170,38 +165,42 @@ public class MainActivity extends Activity {
 			break;
 		case Constants.HOTEL_INFO_FLAG:
 
-			
 			showApps(Constants.HOTEL_INFO_FLAG);
 			break;
 		}
-
-		
 
 	}
 
 	private void showApps(int CATEGORY) {
 
-		
-		if(mPinterestUI!=null){
+		if (mPinterestUI != null) {
 			mAppsLinearLayout.removeView(mPinterestUI);
 		}
 		mPinterestUI = new PinterestUI(mContext,
-				getAppsForThisCategory(Constants.CATEGORY_MAP.get(CATEGORY)), 1,
-				CATEGORY);
+				getAppsForThisCategory(Constants.CATEGORY_MAP.get(CATEGORY)),
+				1, CATEGORY);
 		mPinterestUI.createLayout();
 		mAppsLinearLayout.addView(mPinterestUI);
-		mAppsLinearLayout.setVisibility(View.VISIBLE);
+		mAppsLinearLayout.setVisibility(View.VISIBLE);		
+
+	}
+	
+	private void switchToActivity(Class CLASSNAME){
+		
+
+		// Calling the next Activity.
+		Intent intent = new Intent(MainActivity.this,
+				CLASSNAME);
+		startActivity(intent);
 
 	}
 
 	private ArrayList<AppInfo> getAppsForThisCategory(String Key) {
 
-		
-		Log.e("KEY "," "+Key);
-		final SharedPreferences prefs = getSharedPreferences(
-				Key,
+		Log.e("KEY ", " " + Key);
+		final SharedPreferences prefs = getSharedPreferences(Key,
 
-				Context.MODE_PRIVATE);
+		Context.MODE_PRIVATE);
 		Set<String> set = new HashSet<String>();
 		Set<String> stored = prefs.getStringSet(Key, set);
 		Iterator mIterator = stored.iterator();
@@ -229,61 +228,56 @@ public class MainActivity extends Activity {
 		return cateogryApps;
 
 	}
-	
-	
-	
-	private View.OnClickListener  showAppsListener	= new View.OnClickListener() {
-		
+
+	private View.OnClickListener showAppsListener = new View.OnClickListener() {
+
 		@Override
 		public void onClick(View v) {
-			//v.requestFocus();
-			//v.setPressed(true);
-			CATEGORY	=	(Integer) v.getTag();
+			// v.requestFocus();
+			// v.setPressed(true);
+			CATEGORY = (Integer) v.getTag();
 			populateScreen();
-			
+
 		}
-	}; 
-	
-	private void highLightSelected(){
-		
-		hotelCityInfo.setImageResource(R.drawable.hotel_info_button);
+	};
+
+	private void highLightSelected() {
+
+		hotelCityInfo.setImageResource(R.drawable.htl_city_info);
 		internetApps.setImageResource(R.drawable.internet_apps_button);
 		tvOnlineRadio.setImageResource(R.drawable.tv_radio_button);
 		newsSports.setImageResource(R.drawable.news_sports_button);
 		games.setImageResource(R.drawable.games_button);
 		hotelInfo.setImageResource(R.drawable.hotel_info_button);
-		
-		switch(CATEGORY){
-		
-				case Constants.HOTEL_CITY_INFO_FLAG:
-					hotelCityInfo.setImageResource(R.drawable.htl_city_info_selection);
-					break;
-					
-				case Constants.INTERNET_APPS_FLAG:
-					internetApps.setImageResource(R.drawable.internet_apps_selection);
-					break;
-					
-				case Constants.TV_ONLINE_RADIO_FLAG:
-					tvOnlineRadio.setImageResource(R.drawable.tv_radtion_selection);
-					break;
-					
-				case Constants.NEWS_SPORTS_FLAG:
-					newsSports.setImageResource(R.drawable.news_sports_selection);
-					break;
-					
-				case Constants.GAMES_FLAG:
-					games.setImageResource(R.drawable.games_selection);
-					break;
-					
-				case Constants.HOTEL_INFO_FLAG:
-					hotelInfo.setImageResource(R.drawable.hotel_info_selection);
-					break;
-			
-			
-		
+
+		switch (CATEGORY) {
+
+		case Constants.HOTEL_CITY_INFO_FLAG:
+			hotelCityInfo.setImageResource(R.drawable.htl_city_info_selection);
+			break;
+
+		case Constants.INTERNET_APPS_FLAG:
+			internetApps.setImageResource(R.drawable.internet_apps_selection);
+			break;
+
+		case Constants.TV_ONLINE_RADIO_FLAG:
+			tvOnlineRadio.setImageResource(R.drawable.tv_radtion_selection);
+			break;
+
+		case Constants.NEWS_SPORTS_FLAG:
+			newsSports.setImageResource(R.drawable.news_sports_selection);
+			break;
+
+		case Constants.GAMES_FLAG:
+			games.setImageResource(R.drawable.games_selection);
+			break;
+
+		case Constants.HOTEL_INFO_FLAG:
+			hotelInfo.setImageResource(R.drawable.hotel_info_selection);
+			break;
+
 		}
-	
-		
+
 	}
 
 }
