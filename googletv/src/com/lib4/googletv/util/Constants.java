@@ -22,7 +22,8 @@ public class Constants {
 	public static final int NEWS_SPORTS_FLAG = 4;
 	public static final int GAMES_FLAG = 5;
 	public static final int HOTEL_INFO_FLAG = 6;
-	
+
+	public static int CUR_TEMP		=	22;
 	public static HashMap<Integer, String> CATEGORY_MAP	=	new HashMap<Integer, String>(){
 		
 		{

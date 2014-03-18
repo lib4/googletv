@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.lib4.googletv.R;
 
@@ -17,6 +18,7 @@ public class WebViewFragment extends BaseFragment {
 	LinearLayout mLinearLayout;
 	static ProgressDialog mDialog;
 
+	String url,title;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -48,10 +50,17 @@ public class WebViewFragment extends BaseFragment {
 		});
 		//mWebView.getSettings().setJavaScriptEnabled(true);
 		//mWebView.loadUrl("http://tablet.sportingnews.com/2014-02-03/sn-defense-rules-the-day.html");
-		
-		mWebView.loadUrl("http://www.foxsports.com.au/mobile");
+		TextView mTextView 	=	(TextView) mLinearLayout.findViewById(R.id.title);
+		mTextView.setText(title);
+		mWebView.loadUrl(url);
 		
 		return mLinearLayout;
+	}
+	
+	public void setTitleAndUrl(String title,String url){
+		this.title	=	title;
+		this.url	=	url;
+		
 	}
 
 }

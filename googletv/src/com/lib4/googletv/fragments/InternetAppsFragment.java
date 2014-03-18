@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.lib4.googletv.R;
 import com.lib4.googletv.entity.AppInfo;
@@ -29,7 +30,7 @@ public class InternetAppsFragment extends BaseFragment {
 	LinearLayout mAppsLinearLayout;
 	Context mContext;
 	PinterestUI mPinterestUI;
-
+	String title;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -41,9 +42,15 @@ public class InternetAppsFragment extends BaseFragment {
 		installedApps = mInfo.getInstalledAppInfo();
 		mContext = getActivity();
 		mAppsLinearLayout	=	(LinearLayout) mLinearLayout.findViewById(R.id.apps_layout);
-		
+		TextView titleText	=	(TextView)mLinearLayout.findViewById(R.id.title);
+		titleText.setText(this.title);
 		showApps(1);
+		
 		return mLinearLayout;
+	}
+	
+	public void setTitle(String title){
+		this.title	=	title;
 	}
 	
 	private void showApps(int CATEGORY) {

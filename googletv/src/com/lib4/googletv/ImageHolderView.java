@@ -141,7 +141,7 @@ public class ImageHolderView extends FrameLayout {
 
 	private void startAnimation(Context context) {
 
-		new Timer().schedule(new UpdateTimeTask(), 2000, 3000);
+		new Timer().schedule(new UpdateTimeTask(), 7000, 7000);
 	}
 
 	class UpdateTimeTask extends TimerTask {
@@ -152,6 +152,8 @@ public class ImageHolderView extends FrameLayout {
 				public void run() {
 
 					switchImages();
+					
+					
 				}
 			});
 		}

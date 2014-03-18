@@ -46,11 +46,17 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.app_frame);
 		mHolderView = (ImageHolderView) findViewById(R.id.parentholder);
-		mHolderView.setImages(new int[] { R.drawable.hotel_images_00,
-				R.drawable.hotel_images_01, R.drawable.hotel_images_02,
-				R.drawable.hotel_images_03, R.drawable.hotel_images_04,
-				R.drawable.hotel_images_05, R.drawable.hotel_images_06,
-				R.drawable.hotel_images_07, R.drawable.hotel_images_08 });
+//		mHolderView.setImages(new int[] { R.drawable.hotel_images_00,
+//				R.drawable.hotel_images_01, R.drawable.hotel_images_02,
+//				R.drawable.hotel_images_03, R.drawable.hotel_images_04,
+//				R.drawable.hotel_images_05, R.drawable.hotel_images_06,
+//				R.drawable.hotel_images_07, R.drawable.hotel_images_08 });
+		
+		
+		
+		mHolderView.setImages(new int[] { R.drawable.slideimage_1,
+				R.drawable.slideimage_2, R.drawable.slideimage_3,
+				R.drawable.slideimage_4});
 		//PInfo mInfo = new PInfo(this);
 		mAppsLinearLayout = (LinearLayout) findViewById(R.id.app_holder);
 		//installedApps = mInfo.getInstalledAppInfo();
@@ -141,31 +147,32 @@ public class MainActivity extends Activity {
 		case Constants.HOTEL_CITY_INFO_FLAG:
 
 			//showApps(Constants.HOTEL_CITY_INFO_FLAG);
-			switchToActivity(HotelCityInfoActivity.class);
+			switchToActivity(HotelCityInfoActivity.class,null,null);
 			break;
 		case Constants.INTERNET_APPS_FLAG:
 			//showApps(Constants.INTERNET_APPS_FLAG);
 
-			switchToActivity(InternetAppsActivity.class);
+			switchToActivity(InternetAppsActivity.class,"Internet Apps",null);
 			break;
 		case Constants.TV_ONLINE_RADIO_FLAG:
-
-			showApps(Constants.TV_ONLINE_RADIO_FLAG);
-
+			String url	=	"http://www.siriusxm.com/android";
+			//showApps(Constants.TV_ONLINE_RADIO_FLAG);
+			switchToActivity(WebViewActivity.class,"Online Radio",url );
 			break;
 
 		case Constants.NEWS_SPORTS_FLAG:
 
 			//showApps(Constants.NEWS_SPORTS_FLAG);
-			switchToActivity(WebViewActivity.class);
+			switchToActivity(WebViewActivity.class,"Sports News","http://www.foxsports.com.au/mobile");
 			break;
 		case Constants.GAMES_FLAG:
 
-			showApps(Constants.GAMES_FLAG);
+			//showApps(Constants.GAMES_FLAG);
+			switchToActivity(InternetAppsActivity.class,"Games",null);
 			break;
 		case Constants.HOTEL_INFO_FLAG:
 
-			showApps(Constants.HOTEL_INFO_FLAG);
+			switchToActivity(HotelCityInfoActivity.class,null,null);
 			break;
 		}
 
@@ -185,12 +192,14 @@ public class MainActivity extends Activity {
 
 	}
 	
-	private void switchToActivity(Class CLASSNAME){
+	private void switchToActivity(Class CLASSNAME,String Title,String url){
 		
 
 		// Calling the next Activity.
 		Intent intent = new Intent(MainActivity.this,
 				CLASSNAME);
+		intent.putExtra("title", Title);
+		intent.putExtra("url", url);
 		startActivity(intent);
 
 	}

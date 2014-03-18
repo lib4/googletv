@@ -29,6 +29,8 @@ public class InternetAppsActivity extends BaseActivity {
 	private void loadInternetAppsFragment_Fragment() {
 
 		InternetAppsFragment InternetAppsFragments = new InternetAppsFragment();
+		
+		InternetAppsFragments.setTitle(getIntent().getStringExtra("title"));
 
 		FragmentManager fragmentManager = getFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager

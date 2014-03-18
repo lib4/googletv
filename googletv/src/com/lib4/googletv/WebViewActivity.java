@@ -29,7 +29,7 @@ public class WebViewActivity extends BaseActivity {
 	private void loadHotel_City_Info_Fragment() {
 
 		WebViewFragment mHotel_City_Info_Fragment = new WebViewFragment();
-
+		mHotel_City_Info_Fragment.setTitleAndUrl(getIntent().getStringExtra("title"),getIntent().getStringExtra("url"));
 		FragmentManager fragmentManager = getFragmentManager();
 		FragmentTransaction fragmentTransaction = fragmentManager
 				.beginTransaction();

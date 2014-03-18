@@ -30,6 +30,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight=".7"
             android:gravity="center"
+            android:id="@+id/title"
             android:text="Sports News"
             android:textColor="@color/welcome_message_color"
             android:textSize="42sp" />
