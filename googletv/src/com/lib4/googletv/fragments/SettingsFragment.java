@@ -49,12 +49,12 @@ public class SettingsFragment extends BaseFragment {
 		hotel_info = (ImageView) mSettingsLayout.findViewById(R.id.hotel_info);
 		mAppsLinearLayout	=	(LinearLayout) mSettingsLayout.findViewById(R.id.apps_layout);
 		
-		htl_city_info.setTag(Constants.HOTEL_CITY_INFO_FLAG);
-		internet_apps.setTag(Constants.INTERNET_APPS_FLAG);
-		tv_radio.setTag(Constants.TV_ONLINE_RADIO_FLAG);
+		htl_city_info.setTag(Constants.HOTEL_SERVICES_FLAG);
+		internet_apps.setTag(Constants.NEWS_SPORTS_FLAG);
+		tv_radio.setTag(Constants.MEDIA_RADIO_FLAG);
 		news_sports.setTag(Constants.NEWS_SPORTS_FLAG);
 		games.setTag(Constants.GAMES_FLAG);
-		hotel_info.setTag(Constants.HOTEL_INFO_FLAG);
+		hotel_info.setTag(Constants.HOTEL_SERVICES_FLAG);
 		htl_city_info.setOnClickListener(showAppsListener);
 		internet_apps.setOnClickListener(showAppsListener);
 		tv_radio.setOnClickListener(showAppsListener);
@@ -158,19 +158,19 @@ public class SettingsFragment extends BaseFragment {
 		
 		switch(CATEGORY){
 		
-				case Constants.HOTEL_CITY_INFO_FLAG:
+				case Constants.HOTEL_SERVICES_FLAG:
 					htl_city_info.setImageResource(R.drawable.htl_city_info_selection);
 					break;
 					
-				case Constants.INTERNET_APPS_FLAG:
+				case Constants.NEWS_SPORTS_FLAG:
 					internet_apps.setImageResource(R.drawable.internet_apps_selection);
 					break;
 					
-				case Constants.TV_ONLINE_RADIO_FLAG:
+				case Constants.MEDIA_RADIO_FLAG:
 					tv_radio.setImageResource(R.drawable.tv_radtion_selection);
 					break;
 					
-				case Constants.NEWS_SPORTS_FLAG:
+				case Constants.ONLINE_SOCIAL_FLAG:
 					news_sports.setImageResource(R.drawable.news_sports_selection);
 					break;
 					
@@ -178,7 +178,7 @@ public class SettingsFragment extends BaseFragment {
 					games.setImageResource(R.drawable.games_selection);
 					break;
 					
-				case Constants.HOTEL_INFO_FLAG:
+				case Constants.APPS_WORLD_FLAG:
 					hotel_info.setImageResource(R.drawable.hotel_info_selection);
 					break;
 			

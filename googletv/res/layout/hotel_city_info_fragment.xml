@@ -30,7 +30,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight=".7"
             android:gravity="center"
-            android:text="Hotel/City Info"
+            android:text="Hotel Services"
             android:textColor="@color/welcome_message_color"
             android:textSize="42sp" />
     </LinearLayout>

@@ -1,160 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white_tile_background_color"
     android:gravity="center"
-    android:orientation="vertical"
-    android:weightSum="10" >
+    android:orientation="vertical" >
 
     <LinearLayout
-        android:id="@+id/header_bar"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.0"
-        android:orientation="horizontal"
-        android:weightSum="1.0" >
-
-        <ImageView
-            android:id="@+id/home"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="left"
-            android:layout_weight=".15"
-            android:visibility="invisible"
-            android:src="@drawable/home" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight=".7"
-            android:gravity="center"
-            android:textColor="@color/welcome_message_color"
-            android:text="@string/welcome_message"
-            android:textSize="42sp" />
-
-        <ImageView
-            android:visibility="gone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".15"
-            android:id="@+id/settings"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_gravity="right"
-            android:src="@drawable/settings" />
-
-  
-    </LinearLayout>
-
-    <LinearLayout   android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".2"
-        android:background="#E68A00">
-        
-    </LinearLayout>
-    <!-- HEADER CLOSE -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="6.3"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:weightSum="1.0" >
-		<fragment
-        android:id="@+id/HomeFragment"
-        android:name="com.lib4.googletv.fragments.HomeFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       />
-  
-    </LinearLayout>
-    <!-- SLIDING IMAGE CLOSE -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2.5"
-        android:gravity="center_horizontal"
         android:orientation="vertical"
-         android:layout_margin="2dp"
         android:weightSum="1.0" >
 
         <LinearLayout
+            android:id="@+id/header_bar"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".5"
+            android:layout_weight=".2"
             android:orientation="horizontal"
-            android:padding="1dp"
             android:weightSum="1.0" >
 
             <ImageView
+                android:id="@+id/home"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".33"
-                android:focusable="true"
-                android:clickable="true"
-                android:scaleType="fitCenter"
-                android:id="@+id/htl_city_info"
-                android:src="@drawable/htl_city_info_selector" />
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_weight=".15"
+                android:src="@drawable/home"
+                android:visibility="invisible" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight=".7"
+                android:gravity="center"
+                android:text="@string/welcome_message"
+                android:textColor="@color/welcome_message_color"
+                android:textSize="42sp" />
 
             <ImageView
-                   android:id="@+id/internet_apps"
+                android:id="@+id/settings"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".33"
-                android:focusable="true"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_weight=".15"
                 android:clickable="true"
-                android:src="@drawable/internet_apps_selector" />
-
-            <ImageView
-                    android:id="@+id/tv_radio"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".33"
                 android:focusable="true"
-                 android:clickable="true"
-                android:src="@drawable/tv_radio_selector" />
+                android:src="@drawable/settings"
+                android:visibility="gone" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".5"
+            android:layout_weight=".8"
             android:orientation="horizontal"
-            android:padding="1dp"
             android:weightSum="1.0" >
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".33"
-                  android:focusable="true"
-                   android:clickable="true"
-                      android:id="@+id/news_sports"
-                android:src="@drawable/news_sports_selector" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".33"
-                 android:clickable="true"
-                 android:focusable="true"
-                    android:id="@+id/games"
-                 android:src="@drawable/games_selector" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".33"
-                android:clickable="true"
-                android:focusable="true"
-                 android:id="@+id/hotel_info"
-                android:src="@drawable/hotel_info_selector" />
+            <fragment
+                android:id="@+id/HomeFragment"
+                android:name="com.lib4.googletv.fragments.HomeFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
     </LinearLayout>
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal|bottom"
+        android:padding="1dp"
+        android:weightSum="6" >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/hotelservices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/homeico" />
+
+            <TextView
+                style="@style/text_view_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".2"
+                android:gravity="center"
+                android:text="@string/hotelservices"
+                android:textStyle="bold" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:orientation="vertical" >
+
+            <ImageView
+                  android:id="@+id/newssports"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/newsandspo" />
+
+            <TextView
+                style="@style/text_view_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".2"
+                android:gravity="center"
+                android:text="@string/newssports"
+                android:textStyle="bold" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:orientation="vertical" >
+
+            <ImageView
+                  android:id="@+id/mediaradio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/musicico" />
+
+            <TextView
+                style="@style/text_view_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".2"
+                android:gravity="center"
+                android:text="@string/mediradio"
+                android:textStyle="bold" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/onlinesocial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/social" />
+
+            <TextView
+                style="@style/text_view_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".2"
+                android:gravity="center"
+                android:text="@string/onlinesocial"
+                android:textStyle="bold" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/appsworld"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/appsworld" />
+
+            <TextView
+                style="@style/text_view_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".2"
+                android:gravity="center"
+                android:text="@string/appsworld"
+                android:textStyle="bold" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/games"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/games" />
+
+            <TextView
+                style="@style/text_view_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight=".2"
+                android:gravity="center"
+                android:text="@string/games"
+                android:textStyle="bold" >
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

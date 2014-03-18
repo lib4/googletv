@@ -87,36 +87,35 @@ public final class R {
     }
     public static final class id {
         public static final int HomeFragment=0x7f0a0004;
-        public static final int action_settings=0x7f0a001e;
-        public static final int app_holder=0x7f0a0013;
-        public static final int appicon=0x7f0a001a;
-        public static final int appname=0x7f0a001b;
-        public static final int apps_layout=0x7f0a0015;
-        public static final int back=0x7f0a0016;
+        public static final int action_settings=0x7f0a001d;
+        public static final int app_holder=0x7f0a000d;
+        public static final int appicon=0x7f0a0019;
+        public static final int appname=0x7f0a001a;
+        public static final int apps_layout=0x7f0a000f;
+        public static final int appsworld=0x7f0a0009;
+        public static final int back=0x7f0a0010;
         public static final int drawer_layout=0x7f0a000b;
-        public static final int email_edtTxt=0x7f0a0017;
+        public static final int email_edtTxt=0x7f0a0016;
         public static final int fragment_holder=0x7f0a000c;
-        public static final int games=0x7f0a0009;
+        public static final int games=0x7f0a000a;
         public static final int header_bar=0x7f0a0001;
         public static final int home=0x7f0a0002;
-        public static final int hotel_info=0x7f0a000a;
-        public static final int htl_city_info=0x7f0a0005;
-        public static final int internet_apps=0x7f0a0006;
-        public static final int news_sports=0x7f0a0008;
+        public static final int hotel_info=0x7f0a0015;
+        public static final int hotelservices=0x7f0a0005;
+        public static final int htl_city_info=0x7f0a0011;
+        public static final int internet_apps=0x7f0a0012;
+        public static final int mediaradio=0x7f0a0007;
+        public static final int news_sports=0x7f0a0014;
+        public static final int newssports=0x7f0a0006;
+        public static final int onlinesocial=0x7f0a0008;
         public static final int parentholder=0x7f0a0000;
-        public static final int password_edtTxt=0x7f0a0018;
+        public static final int password_edtTxt=0x7f0a0017;
         public static final int settings=0x7f0a0003;
-        public static final int signin_btn=0x7f0a0019;
-        public static final int tickmark=0x7f0a001c;
-        public static final int time_image=0x7f0a000d;
-        public static final int time_image_view=0x7f0a000e;
-        public static final int timetext=0x7f0a000f;
-        public static final int title=0x7f0a0014;
-        public static final int tv_radio=0x7f0a0007;
-        public static final int weather_image=0x7f0a0010;
-        public static final int weather_image_view=0x7f0a0012;
-        public static final int weathertext=0x7f0a0011;
-        public static final int webview=0x7f0a001d;
+        public static final int signin_btn=0x7f0a0018;
+        public static final int tickmark=0x7f0a001b;
+        public static final int title=0x7f0a000e;
+        public static final int tv_radio=0x7f0a0013;
+        public static final int webview=0x7f0a001c;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -136,8 +135,13 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f070001;
         public static final int app_name=0x7f070000;
-        public static final int celsius=0x7f070008;
+        public static final int appsworld=0x7f07000c;
         public static final int compnay_info=0x7f070006;
+        public static final int games=0x7f07000d;
+        public static final int hotelservices=0x7f070008;
+        public static final int mediradio=0x7f07000a;
+        public static final int newssports=0x7f070009;
+        public static final int onlinesocial=0x7f07000b;
         public static final int password=0x7f070003;
         public static final int signin=0x7f070004;
         public static final int uname_not_matching=0x7f070007;
@@ -148,11 +152,13 @@ public final class R {
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
         
 
         Base application theme for API 11+. This theme completely replaces
@@ -167,5 +173,6 @@ public final class R {
         public static final int AppTheme=0x7f080001;
         public static final int button=0x7f080002;
         public static final int imagestyle=0x7f080003;
+        public static final int text_view_white=0x7f080004;
     }
 }

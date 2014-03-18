@@ -31,8 +31,8 @@ public class HomeFragment extends Fragment implements LocationListener,
 
 	LinearLayout mHomeLayout;
 
-	TextView timeText;
-	TextView weatherText;
+	//TextView timeText;
+	//TextView weatherText;
 
 	Handler mHandler = new Handler();
 	LocationManager Locationm;
@@ -48,8 +48,8 @@ public class HomeFragment extends Fragment implements LocationListener,
 		mHomeLayout = (LinearLayout) inflater.inflate(R.layout.home_fragment,
 				container, false);
 
-		timeText = (TextView) mHomeLayout.findViewById(R.id.timetext);
-		weatherText = (TextView) mHomeLayout.findViewById(R.id.weathertext);
+	//	timeText = (TextView) mHomeLayout.findViewById(R.id.timetext);
+	//	weatherText = (TextView) mHomeLayout.findViewById(R.id.weathertext);
 
 		handler = new Handler();
 
@@ -59,29 +59,29 @@ public class HomeFragment extends Fragment implements LocationListener,
 
 	private void init() {
 
-		updateTimer();
+		//updateTimer();
 		startTimer(getActivity());
 
-		Locationm = (LocationManager) getActivity().getSystemService(
-				getActivity().LOCATION_SERVICE);
+		//Locationm = (LocationManager) getActivity().getSystemService(
+			//	getActivity().LOCATION_SERVICE);
 
-		Locationm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,
-				MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
+		//Locationm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,
+				//MIN_TIME_BW_UPDATES, MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
 
 	}
 
 	private void updateTimer() {
 		
-		DateFormat dateFormat = new SimpleDateFormat("HH:mm");
-		Date date = new Date();
-		Log.e("TIME", "test " + dateFormat.format(date));
-		Log.e("HOUR ", "test " + Calendar.getInstance().get(Calendar.HOUR));
-		Log.e("MINUTE ", "test " + Calendar.getInstance().get(Calendar.MINUTE));
-
-		if (Calendar.getInstance().get(Calendar.AM_PM) == 1)
-			timeText.setText(dateFormat.format(date) + " PM");
-		else
-			timeText.setText(dateFormat.format(date) + " AM");
+//		DateFormat dateFormat = new SimpleDateFormat("HH:mm");
+//		Date date = new Date();
+//		Log.e("TIME", "test " + dateFormat.format(date));
+//		Log.e("HOUR ", "test " + Calendar.getInstance().get(Calendar.HOUR));
+//		Log.e("MINUTE ", "test " + Calendar.getInstance().get(Calendar.MINUTE));
+//
+//		if (Calendar.getInstance().get(Calendar.AM_PM) == 1)
+//			timeText.setText(dateFormat.format(date) + " PM");
+//		else
+//			timeText.setText(dateFormat.format(date) + " AM");
 
 	}
 
@@ -127,8 +127,8 @@ public class HomeFragment extends Fragment implements LocationListener,
 				@Override
 				public void run() {
 
-					weatherText.setText(Constants.CUR_TEMP + ""
-							+ getActivity().getString(R.string.celsius));
+					//weatherText.setText(Constants.CUR_TEMP + ""
+							//+ getActivity().getString(R.string.celsius));
 
 				}
 

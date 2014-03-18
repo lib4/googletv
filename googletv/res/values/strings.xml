@@ -5,9 +5,9 @@
     <string name="action_settings">Settings</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
-  	<string name="signin">Sign In</string>
-  	<string name="welcome_message">The Grand America Hotel</string>
-  	<string name="compnay_info">"The Indian Hotels Company Limited (IHCL) and its subsidiaries are collectively known as Taj Hotels Resorts and Palaces and is recognised as one of Asia's largest and finest hotel company. Incorporated by the founder of the Tata Group, Mr. Jamsetji N. Tata, the company opened its first property, The Taj Mahal Palace Hotel, Bombay in 1903. The Taj, a symbol of Indian hospitality, completed its centenary year in 2003.
+    <string name="signin">Sign In</string>
+    <string name="welcome_message">The Grand America Hotel</string>
+    <string name="compnay_info">"The Indian Hotels Company Limited (IHCL) and its subsidiaries are collectively known as Taj Hotels Resorts and Palaces and is recognised as one of Asia's largest and finest hotel company. Incorporated by the founder of the Tata Group, Mr. Jamsetji N. Tata, the company opened its first property, The Taj Mahal Palace Hotel, Bombay in 1903. The Taj, a symbol of Indian hospitality, completed its centenary year in 2003.
 Taj Hotels Resorts and Palaces comprises 93 hotels in 55 locations across India with an additional 16 international hotels in the Maldives, Malaysia, Australia, UK, USA, Bhutan, Sri Lanka, Africa and the Middle East.
 Spanning the length and breadth of the country, gracing important industrial towns and cities, beaches, hill stations, historical and pilgrim centres and wildlife destinations, each Taj hotel offers the luxury of service, the apogee of Indian hospitality, vantage locations, modern amenities and business facilities.
 IHCL operate in the luxury, premium, mid-market and value segments of the market through the following:
@@ -38,6 +38,12 @@ We believe in continuous learning and sharing and would be delighted to have you
 EARTH
 In an endeavour to reinstate its vision and efforts to boost sustainable tourism, Taj Hotels Resorts and Palaces presented EARTH (Environment Awareness and Renewal at Taj Hotels) this year. Implementing schemes such as the Gangroti Glacier Clean-Up Expedition, as well as designated Earth rooms, which minimise environmental impact, Taj is one of Asia's largest group of hotels to commit to energy conservation and environmental management. EARTH has received certification from Green Globe, the only worldwide environmental certification program for travel and tourism.
 The Taj began a century ago with a single landmark - The Taj Mahal Palace Hotel, Mumbai. Today, the various Taj hotels, in all their variety and historical richness, are recognised internationally as the symbols of true Indian hospitality. The Company's history is integral to India's emergence into the global business and leisure travel community; and looking to the future, Taj Hotels Resorts and Palaces is well positioned to meet the increase in travel activity with the rapid expansion of the Indian economy."</string>
-  	<string name="uname_not_matching">Authorization Required. Invalid email/password combination.</string>
-<string name="celsius">ºC</string>
+    <string name="uname_not_matching">Authorization Required. Invalid email/password combination.</string>
+    <string name="hotelservices">Hotel Services</string>
+    <string name="newssports">News &amp; Sports</string>
+    <string name="mediradio">Media &amp; Radio</string>
+    <string name="onlinesocial">Online &amp; Social</string>
+    <string name="appsworld">Apps World</string>
+    <string name="games">Games</string>
+
 </resources>
