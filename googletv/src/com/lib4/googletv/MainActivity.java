@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
@@ -22,6 +23,7 @@ import android.widget.ScrollView;
 
 import com.lib4.googletv.entity.AppInfo;
 import com.lib4.googletv.fragments.BaseFragment;
+import com.lib4.googletv.fragments.InternetAppsFragment;
 import com.lib4.googletv.util.Constants;
 import com.lib4.googletv.util.PInfo;
 import com.lib4.googletv.util.PinterestUI;
@@ -51,7 +53,7 @@ public class MainActivity extends Activity {
 				R.drawable.slideimage_2, R.drawable.slideimage_3,
 				R.drawable.slideimage_4 });
 		
-		
+	
 
 		// PInfo mInfo = new PInfo(this);
 		mAppsLinearLayout = (LinearLayout) findViewById(R.id.app_holder);
@@ -145,9 +147,11 @@ public class MainActivity extends Activity {
 			switchToActivity(HotelCityInfoActivity.class, null, null);
 			break;
 		case Constants.NEWS_SPORTS_FLAG:
+			String news_url = "http://www.siriusxm.com/android";
 			// showApps(Constants.INTERNET_APPS_FLAG);
 
-			switchToActivity(InternetAppsActivity.class, "Internet Apps", null);
+			//switchToActivity(InternetAppsActivity.class, "Internet Apps", null);
+			switchToActivity(WebViewActivity.class, "News & Sports", news_url);
 			break;
 		case Constants.MEDIA_RADIO_FLAG:
 			String url = "http://www.siriusxm.com/android";
@@ -161,14 +165,16 @@ public class MainActivity extends Activity {
 			switchToActivity(WebViewActivity.class, "Online & Social",
 					"http://www.foxsports.com.au/mobile");
 			break;
-		case Constants.GAMES_FLAG:
-
-			// showApps(Constants.GAMES_FLAG);
-			switchToActivity(InternetAppsActivity.class, "Games", null);
-			break;
+		
 		case Constants.APPS_WORLD_FLAG:
 
 			switchToActivity(HotelCityInfoActivity.class, "App World", null);
+			break;
+		case Constants.GAMES_FLAG:
+
+			// showApps(Constants.GAMES_FLAG);
+			//switchToActivity(InternetAppsActivity.class, "Games", null);
+			switchToFragment(new InternetAppsFragment(),"",null);
 			break;
 		}
 
@@ -195,6 +201,33 @@ public class MainActivity extends Activity {
 		intent.putExtra("title", Title);
 		intent.putExtra("url", url);
 		startActivity(intent);
+
+	}
+	
+	
+	private void switchToFragment(Fragment mFragment, String Title, String url) {
+
+	
+		
+		
+		//mFragment.setTitle(getIntent().getStringExtra("title"));
+
+		FragmentManager fragmentManager = getFragmentManager();
+		FragmentTransaction fragmentTransaction = fragmentManager
+				.beginTransaction();
+
+		fragmentTransaction.addToBackStack(null);
+		// fragmentTransaction.setCustomAnimations(R.anim.enter, R.anim.exit,
+		// R.anim.pop_enter, R.anim.pop_exit);
+		// Replace whatever is in the fragment_container view with this
+		// fragment,
+		// and add the transaction to the back stack
+		fragmentTransaction.replace(R.id.appframe_holder, mFragment);
+
+		// Commit the transaction
+		fragmentTransaction.commit();
+		
+		
 
 	}
 

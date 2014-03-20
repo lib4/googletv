@@ -4,7 +4,6 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 
-import com.lib4.googletv.fragments.Hotel_City_Info_Fragment;
 import com.lib4.googletv.fragments.InternetAppsFragment;
 
 public class InternetAppsActivity extends BaseActivity {

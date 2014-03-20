@@ -2,10 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white_tile_background_color"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:weightSum="10" >
+    android:layout_gravity="bottom"
+    android:gravity="bottom"
+    android:orientation="vertical" >
 
     <LinearLayout
         android:id="@+id/header_bar"
@@ -13,6 +12,7 @@
         android:layout_height="0dp"
         android:layout_weight="1.0"
         android:orientation="horizontal"
+        android:visibility="gone"
         android:weightSum="1.0" >
 
         <ImageView
@@ -25,13 +25,13 @@
             android:visibility="invisible" />
 
         <TextView
+            android:id="@+id/title"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
             android:layout_weight=".7"
             android:gravity="center"
             android:text="Internet Apps"
-            android:id="@+id/title"
             android:textColor="@color/welcome_message_color"
             android:textSize="42sp" />
     </LinearLayout>
@@ -40,29 +40,29 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight=".2"
-        android:background="#E68A00" >
+        android:background="#E68A00"
+        android:visibility="gone" >
     </LinearLayout>
 
-    <ImageView 
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-              android:layout_weight="3.8"
-              android:background="@drawable/internet_apps"/>
-    <ScrollView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5.0" >
+        android:layout_weight="3.8"
+        android:background="@drawable/internet_apps"
+        android:visibility="gone" />
 
-        
-    <LinearLayout
-        android:id="@+id/apps_layout"
-        android:padding="1dp"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:weightSum="1.0" >
-    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
+        <LinearLayout
+            android:id="@+id/apps_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:padding="1dp"
+            android:weightSum="1.0" >
+        </LinearLayout>
     </ScrollView>
 
 </LinearLayout>

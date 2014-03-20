@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white_tile_background_color"
@@ -7,6 +7,7 @@
     android:orientation="vertical" >
 
     <LinearLayout
+        android:id="@+id/slider_holder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -18,6 +19,7 @@
             android:layout_height="0dp"
             android:layout_weight=".2"
             android:orientation="horizontal"
+            android:visibility="gone"
             android:weightSum="1.0" >
 
             <ImageView
@@ -54,7 +56,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".8"
+            android:layout_weight="1.0"
             android:orientation="horizontal"
             android:weightSum="1.0" >
 
@@ -67,183 +69,192 @@
     </LinearLayout>
 
     <LinearLayout
+      
         android:layout_width="wrap_content"
         android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/slider_holder"
         android:layout_gravity="bottom"
-        android:orientation="horizontal"
         android:gravity="center_horizontal|bottom"
+        android:orientation="horizontal"
         android:padding="1dp"
         android:weightSum="6" >
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:orientation="vertical" >
+            android:id="@+id/appframe_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
-            <ImageView
-                android:id="@+id/hotelservices"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight=".8"
-                android:adjustViewBounds="true"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/homeico" />
+                android:layout_weight="1.0"
+                android:orientation="vertical" >
 
-            <TextView
-                style="@style/text_view_white"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/hotelservices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/homeico" />
+
+                <TextView
+                    style="@style/text_view_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".2"
+                    android:gravity="center"
+                    android:text="@string/hotelservices"
+                    android:textStyle="bold" >
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight=".2"
-                android:gravity="center"
-                android:text="@string/hotelservices"
-                android:textStyle="bold" >
-            </TextView>
-        </LinearLayout>
+                android:layout_weight="1.0"
+                android:orientation="vertical" >
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:orientation="vertical" >
+                <ImageView
+                    android:id="@+id/newssports"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/newsandspo" />
 
-            <ImageView
-                  android:id="@+id/newssports"
-                android:layout_width="wrap_content"
+                <TextView
+                    style="@style/text_view_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".2"
+                    android:gravity="center"
+                    android:text="@string/newssports"
+                    android:textStyle="bold" >
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight=".8"
-                android:adjustViewBounds="true"
-                android:clickable="true"
-                android:focusable="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/newsandspo" />
+                android:layout_weight="1.0"
+                android:orientation="vertical" >
 
-            <TextView
-                style="@style/text_view_white"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/mediaradio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/musicico" />
+
+                <TextView
+                    style="@style/text_view_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".2"
+                    android:gravity="center"
+                    android:text="@string/mediradio"
+                    android:textStyle="bold" >
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight=".2"
-                android:gravity="center"
-                android:text="@string/newssports"
-                android:textStyle="bold" >
-            </TextView>
-        </LinearLayout>
+                android:layout_weight="1.0"
+                android:orientation="vertical" >
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:orientation="vertical" >
+                <ImageView
+                    android:id="@+id/onlinesocial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/social" />
 
-            <ImageView
-                  android:id="@+id/mediaradio"
-                android:layout_width="wrap_content"
+                <TextView
+                    style="@style/text_view_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".2"
+                    android:gravity="center"
+                    android:text="@string/onlinesocial"
+                    android:textStyle="bold" >
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight=".8"
-                android:adjustViewBounds="true"
-                android:clickable="true"
-                android:focusable="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/musicico" />
+                android:layout_weight="1.0"
+                android:orientation="vertical" >
 
-            <TextView
-                style="@style/text_view_white"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/appsworld"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/appsworld" />
+
+                <TextView
+                    style="@style/text_view_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".2"
+                    android:gravity="center"
+                    android:text="@string/appsworld"
+                    android:textStyle="bold" >
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight=".2"
-                android:gravity="center"
-                android:text="@string/mediradio"
-                android:textStyle="bold" >
-            </TextView>
-        </LinearLayout>
+                android:layout_weight="1.0"
+                android:orientation="vertical" >
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:orientation="vertical" >
+                <ImageView
+                    android:id="@+id/games"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".8"
+                    android:adjustViewBounds="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/games" />
 
-            <ImageView
-                android:id="@+id/onlinesocial"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".8"
-                android:adjustViewBounds="true"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/social" />
-
-            <TextView
-                style="@style/text_view_white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight=".2"
-                android:gravity="center"
-                android:text="@string/onlinesocial"
-                android:textStyle="bold" >
-            </TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:orientation="vertical" >
-
-            <ImageView
-                android:id="@+id/appsworld"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".8"
-                android:adjustViewBounds="true"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/appsworld" />
-
-            <TextView
-                style="@style/text_view_white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight=".2"
-                android:gravity="center"
-                android:text="@string/appsworld"
-                android:textStyle="bold" >
-            </TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:orientation="vertical" >
-
-            <ImageView
-                android:id="@+id/games"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".8"
-                android:adjustViewBounds="true"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/games" />
-
-            <TextView
-                style="@style/text_view_white"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight=".2"
-                android:gravity="center"
-                android:text="@string/games"
-                android:textStyle="bold" >
-            </TextView>
+                <TextView
+                    style="@style/text_view_white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".2"
+                    android:gravity="center"
+                    android:text="@string/games"
+                    android:textStyle="bold" >
+                </TextView>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
-</FrameLayout>
+</RelativeLayout>
